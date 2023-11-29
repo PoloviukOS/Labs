@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="task1">
+        <div id="result">* * * * * *</div>
+        <div><textarea id="text" rows="5" cols="50" placeholder="Текст"></textarea></div>
+        <div>
+            <input type="number" id="size" placeholder="Розмір тексту" />
+            <button onclick="textOutput(text.value, size.value)">Запуск завдання №1</button>
+        </div>
+    </div>
+    <div class="task2">
+        <div id="outputTable">* * * * * *</div>
+        <div><textarea id="table_text" rows="5" cols="50" placeholder="Текст (пробіл - новий стовпець, абзац - нова комірка стовпця)"></textarea></div>
+        <div><button onclick="generateTable(table_text.value)">Запуск завдання №2</button></div>
+    </div>
+    <div class="task4">
+        <div><textarea id="text_options" rows="5" cols="50" placeholder="Текст (числа й слова через кому)"></textarea></div>
+        <button onclick="handleClick(text_options.value)">Запуск завдання №4</button>
+    </div>
+    <div class="task3">
+        <input type="number" id="number" placeholder="Кількість заголовків" />
+        <button onclick="createHeaders(number.value)">Запуск завдання №3</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

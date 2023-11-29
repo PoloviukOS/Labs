@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <button id="button">Запуск завдання №4</button>
+
+    <script>
+        const button = document.getElementById("button");
+
+        button.onclick = () => {
+            const age = +prompt("Введіть вік (від 1 до 69 років):")
+
+            if (isNaN(age) || age < 1 || age > 69) return alert("Невірний вік! Введіть число в діапазоні 1-69!")
+
+            const description = getAgeDescription(age)
+            alert(description)
+        }
+
+        function getAgeDescription(age) {
+            const units = ['', 'один', 'два', 'три', 'чотири', 'п\'ять', 'шість', 'сім', 'вісім', 'дев\'ять']
+            const teens = ['десять', 'одинадцять', 'дванадцять', 'тринадцять', 'чотирнадцять', 'п\'ятнадцять', 'шістнадцять', 'сімнадцять', 'вісімнадцять', 'дев\'ятнадцять']
+            const tens = ['', '', 'двадцять', 'тридцять', 'сорок', 'п\'ятдесят', 'шістдесят']
+            let description = ''
+
+            if (age >= 20) {
+                const tensDigit = Math.floor(age / 10)
+                const unitsDigit = age % 10
+                description = tens[tensDigit] + ' ' + units[unitsDigit]
+            } else if (age >= 10) {
+                description = teens[age - 10]
+            } else {
+                description = units[age]
+            }
+
+            if (age % 10 === 1 && age !== 11) {
+                description += ' рік'
+            } else if ((age % 10 >= 2 && age % 10 <= 4) && (age < 10 || age > 20)) {
+                description += ' роки'
+            } else {
+                description += ' років'
+            }
+
+            return description
+        }
+    </script>
+</body>
+</html>
+

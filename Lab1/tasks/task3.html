@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<body>
+    <button id="button">Запуск завдання №3</button>
+
+    <script>
+        const button = document.getElementById("button")
+
+        button.onclick = () => {
+            const date = prompt("Введіть дату (день.місяць.рік):")
+            const nextDate = getNextDate(date)
+            const previousDate = getPreviousDate(date)
+    
+            alert(`Попередня дата: ${previousDate}\nНаступна дата: ${nextDate}`)
+        }
+
+        function isLeapYear(year) {
+            return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
+        }
+
+        function addLeadingZero(number) {
+            return number < 10 ? `0${number}` : `${number}`;
+        }
+  
+        function getNextDate(date) {
+            const [day, month, year] = date.split(".").map(Number)
+            const daysInMonth = [31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  
+            let nextDay = day + 1
+            let nextMonth = month
+            let nextYear = year
+  
+            if (nextDay > daysInMonth[month - 1]) {
+                nextDay = 1
+                nextMonth += 1
+  
+                if (nextMonth > 12) {
+                    nextMonth = 1
+                    nextYear += 1
+                }
+            }
+
+            const formattedNextDay = addLeadingZero(nextDay)
+            const formattedNextMonth = addLeadingZero(nextMonth)
+  
+            return `${formattedNextDay}.${formattedNextMonth}.${nextYear}`;
+        }
+  
+        function getPreviousDate(date) {
+            const [day, month, year] = date.split(".").map(Number)
+            const daysInMonth = [31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  
+            let previousDay = day - 1
+            let previousMonth = month
+            let previousYear = year
+  
+            if (previousDay === 0) {
+                previousMonth -= 1
+  
+                if (previousMonth === 0) {
+                    previousMonth = 12
+                    previousYear -= 1
+                }
+  
+                previousDay = daysInMonth[previousMonth - 1]
+            }
+
+            const formattedPreviousDay = addLeadingZero(previousDay)
+            const formattedPreviousMonth = addLeadingZero(previousMonth)
+  
+            return `${formattedPreviousDay}.${formattedPreviousMonth}.${previousYear}`;
+        }
+    </script>
+</body>
+</html>

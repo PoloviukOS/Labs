@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+</head>
+<body>
+    <button id="button">Запуск завдання №7</button>
+
+    <script>
+        const button = document.getElementById("button")
+
+        button.onclick = () => {
+            let s = +prompt("Введіть число S:")
+            let k = +prompt("Введите цифру K (0-9):")
+
+            if (k >= 0 && k < 10) {
+                let arr = []
+                while (s > 0) {
+                    arr.unshift(s % 10)
+                    s = (s / 10) | 0
+                }
+                return alert(`Результат зведення до ступеня (${arr[1]} до ${k}): ${Math.pow(arr[1], k)}`)
+            }
+            alert("Одне із значень введено не правильно!")
+        }
+    </script>
+</body>
+</html>

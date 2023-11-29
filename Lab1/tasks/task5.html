@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+    <button id="button">Запуск завдання №5</button>
+
+    <script>
+        const button = document.getElementById("button")
+
+        button.onclick = () => {
+            do {
+                var firstNumber = +prompt('Введіть число №1:')
+                var secondNumber = +prompt('Введіть число №2:')
+                var sign = prompt('Введіть знак (- + / *):')
+ 
+                switch (sign) {
+                    case '+': alert(firstNumber + secondNumber); break
+                    case '-': alert(firstNumber - secondNumber); break
+                    case '/': alert(firstNumber / secondNumber); break
+                    case '*': alert(firstNumber * secondNumber); break
+                    default: break
+                }
+ 
+            } while (confirm('Чи хочите ви вирішити ще один приклад?'))
+        }
+    </script>
+</body>
+</html>

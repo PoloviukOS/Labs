@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <button id="button">Запуск завдання №2</button>
+
+    <script>
+        const button = document.getElementById("button")
+
+        button.onclick = () => {
+            let number = +prompt("Введіть п'ятизначне число число:")
+
+            if(String(number).length != 5) return alert("Дане число не п'ятизначне!")
+
+            let str = number + ""
+            str = str.replace(/(\d)(\d)(\d)(\d)(\d)/, "$5$1$2$3$4")
+            alert("Ваше число: " + Number(str)) 
+        }
+    </script>
+</body>
+</html>

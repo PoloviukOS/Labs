@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="task1">
+        <div><textarea id="text_with_dates" rows="5" cols="50" placeholder="Текст (бажано з датами)"></textarea></div>
+        <button onclick="findDates()">Знайти валідні дати</button>
+    </div>
+    <div class="task2">
+        <button onclick="toCamelCase()">Зміна стилю змінної: з "snake_case" в "lowerCamelCase"</button>
+    </div>
+    <div class="task3">
+        <button onclick="toSnakeCase()">Зміна стилю змінної: з "lowerCamelCase" в "snake_case"</button>
+    </div>
+    <div class="task4">
+        <div><textarea id="text_with_color" rows="5" cols="50" placeholder="Текст (бажано з кольорами у форматі #ABC або #ABCDEF)"></textarea></div>
+        <button onclick="findHexColor()">Знайти кольори у форматі #ABC або # ABCDEF</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

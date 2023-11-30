@@ -1,0 +1,7 @@
+#answersForm {
+    display: flex;
+}
+
+#option2, #option3, #option4 {
+    margin-left: 20px;
+}
